@@ -1,0 +1,38 @@
+body:
+  mode: "mannequin"
+  name: "Grox"
+  skin: ""
+  display_name: "&f{bot_name}"
+
+  follow_target: true
+  follow_offsets:
+    x: 1.0
+    y: 0.0
+    z: 1.0
+
+  remove_on_shutdown: false
+
+  behavior:
+    look_enabled: true
+    walk_enabled: true
+    walk_step: 0.35
+    jump_enabled: false
+    jump_height: 0.35
+    jump_cycle_ms: 1200
+    hit_enabled: false
+    hit_cooldown_ms: 1800
+    hit_commands: []
+    turn_ground_enabled: true
+
+  actions:
+    move_duration_ticks: 80
+
+  name_label:
+    y_offset: 2.15
+
+  mannequin:
+    spawn_command: "summon minecraft:mannequin {x} {y} {z}"
+    post_spawn_commands: []
+
+  # Runtime section managed by plugin
+  bots: {}

@@ -1,0 +1,91 @@
+scan:
+  interval_minutes: 5
+  max_players_per_scan: 50
+  suspicion_watch: 7
+  suspicion_alert: 13
+  suspicion_danger: 22
+  suspicion_severe: 32
+  max_accounts_per_ip: 4
+  join_burst_limit: 3
+  join_burst_window_seconds: 120
+  warn_player_on_alt_limit: true
+  max_move_delta_watch: 1.25
+
+actions:
+  auto_kick_on_danger: true
+  auto_ban_on_severe: false
+  kick_message: "AIAdmin phát hiện hành vi bất thường. Vui lòng chờ staff kiểm tra."
+  pipeline:
+    enabled: true
+    warn_tier: "WATCH"
+    flag_tier: "ALERT"
+    kick_tier: "DANGER"
+    ban_tier: "SEVERE"
+    tempban_tier: "DANGER"
+    do_warn: true
+    do_flag: true
+    do_kick: true
+    do_ban: false
+    auto_tempban_hack_likely: true
+    action_cooldown_seconds: 45
+    ban_reason: "AI detected high-risk cheating behavior"
+    hack_tempban_reason: "AI detected hack-like behavior"
+    protection:
+      relax_for_likely_pro: true
+    messages:
+      warn: "&e[Warn] {player} tier={tier} suspicion={suspicion} skill={skill}"
+      flag: "&6[Flag] {player} tier={tier} suspicion={suspicion} skill={skill}"
+      kick: "&c[Kick] {player} tier={tier} suspicion={suspicion} skill={skill}"
+      ban: "&4[Ban] {player} tier={tier} suspicion={suspicion} skill={skill}"
+
+litebans:
+  enabled: true
+  ban_duration: 3d
+  ban_reason: "AI phát hiện gian lận"
+
+chat:
+  trigger_prefix: "ai "
+  enable_chat_ai: true
+  admin_mode_name: "Grox"
+  admin_relay:
+    prefix: "&c&l[ADMIN] "
+    name: "&bGrox"
+    separator: "&f: "
+    message: "&b{message}"
+  request_cooldown_seconds: 3
+  max_prompt_chars: 700
+
+openai:
+  enabled: true
+  api_key: ""
+  api_key_env: "GROQ_API_KEY"
+  endpoint: "https://api.groq.com/openai/v1"
+  model: "llama-3.1-8b-instant"
+  connect_timeout_seconds: 10
+  request_timeout_seconds: 20
+  max_output_tokens: 160
+  max_reply_chars: 300
+  include_reasoning_payload: false
+  include_text_payload: false
+  reasoning_effort: "low"
+  verbosity: "low"
+  system_prompt: "Bạn là Grox, trợ lý admin Minecraft. Nói chuyện tự nhiên như người thật, gọn, dễ hiểu, không cần quá lịch sự. Có thể dùng slang genz nhẹ và đùa nhẹ khi phù hợp, nhưng không tục tĩu, không toxic. Tập trung vào hướng dẫn server, rule và hỗ trợ staff."
+
+console:
+  debug_matches: false
+
+suspicion:
+  points:
+    default_alert: 3
+    alt_account: 4
+    join_burst: 3
+    movement_spike: 1
+    killaura: 6
+    speed: 5
+    reach: 5
+    fly: 6
+    scaffold: 5
+    timer: 4
+    velocity: 3
+    autoclicker: 4
+    aimassist: 5

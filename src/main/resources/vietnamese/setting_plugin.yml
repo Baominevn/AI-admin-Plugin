@@ -1,0 +1,11 @@
+plugins:
+  liteban: false
+  tab: true
+  placeholder: false
+  citizens: false
+  vulcan: false
+  ncp: false
+
+behavior:
+  fallback_to_internal_when_missing: true
+  log_status_on_startup: true

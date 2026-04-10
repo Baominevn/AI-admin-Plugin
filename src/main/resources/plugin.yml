@@ -1,0 +1,18 @@
+name: AIAdmin
+version: 3.0.0
+main: me.aiadmin.AIAdmin
+api-version: '1.21'
+author: Baominevn
+softdepend:
+  - LiteBans
+  - TAB
+  - PlaceholderAPI
+  - Citizens
+commands:
+  aiadmin:
+    description: AI Admin commands
+    usage: /aiadmin help
+    aliases: [ai]
+permissions:
+  aiadmin.admin:
+    default: op

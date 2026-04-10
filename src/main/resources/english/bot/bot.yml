@@ -1,0 +1,27 @@
+bot:
+  enabled: true
+  bot_name: "Grox"
+  selected: ""
+  trigger_tier: "ALERT"
+  observe_seconds: 600
+  follow_interval_ticks: 20
+  commands:
+    spawn: []
+    follow: []
+    remove: []
+  ai:
+    enabled: true
+    use_llm: true
+    llm_prefix: "[BotAI] "
+    report_interval_seconds: 12
+    playful_rate: 0.18
+    voice:
+      normal:
+        - "[BotAI] {bot} is tracking {player} | tier={tier} | suspicion={suspicion}"
+        - "[BotAI] {player} has {alerts} alerts so far, keep watching. {learning}"
+      playful:
+        - "[BotAI] {player} looks a bit spicy, check carefully."
+        - "[BotAI] {player} looks pretty sharp right now, keep an eye on that."
+      danger:
+        - "[BotAI] High alert: {player} tier={tier}, staff should watch immediately."
+        - "[BotAI] Hack risk is getting clearer for {player}, alerts={alerts}, suspicion={suspicion}. {learning}"

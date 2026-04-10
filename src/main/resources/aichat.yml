@@ -1,0 +1,76 @@
+aichat:
+  # true: ưu tiên trả lời theo rule trong file này trước khi gọi model.
+  # false: gọi model trước, nếu model lỗi thì fallback về rule.
+  use_custom_first: true
+
+  # Câu trả lời mặc định nếu không khớp rule và model không trả kết quả.
+  default_reply: "Mình chưa hiểu rõ câu hỏi. Bạn thử hỏi về luật server, cách chơi, hoặc thông tin cơ bản nhé."
+
+  # Placeholder hỗ trợ trong reply:
+  # {player} = tên người chơi
+  # {online} = số người đang online
+  # {prompt} = nội dung người chơi vừa hỏi
+  rules:
+    greeting:
+      mode: contains
+      match:
+        - "xin chào"
+        - "chào"
+        - "hello"
+        - "hi"
+      replies:
+        - "Chào {player}, hiện có {online} người đang online."
+        - "Xin chào {player}. Server đang có {online} người chơi."
+        - "Hello {player}. Hiện tại online: {online}."
+
+    rules_info:
+      mode: contains
+      match:
+        - "luật"
+        - "rule"
+        - "nội quy"
+      replies:
+        - "Luật cơ bản: không hack, không exploit bug, tôn trọng người khác và staff."
+        - "Bạn chơi fair-play, không dùng tool gian lận, không phá hoại trải nghiệm người khác nhé."
+        - "Rule nhanh: chơi đẹp, không gian lận, không toxic quá mức."
+
+    command_help:
+      mode: contains
+      match:
+        - "lệnh"
+        - "help"
+        - "hướng dẫn"
+      replies:
+        - "Player dùng cú pháp: ai <nội dung>. Staff có thể dùng thêm /aiadmin help."
+        - "Nếu bạn là member, cứ chat: ai <câu hỏi>. Staff xem lệnh tại /aiadmin help."
+        - "Bạn có thể hỏi trực tiếp bằng 'ai ...', mình sẽ hỗ trợ nhanh."
+
+    ping_exact:
+      mode: equals
+      match:
+        - "ping"
+      replies:
+        - "Pong. Server đang ổn định."
+        - "Pong. Kết nối hiện tại bình thường."
+        - "Pong. Mọi thứ vẫn mượt."
+
+    report_hint:
+      mode: contains
+      match:
+        - "báo cáo"
+        - "report"
+        - "nghi hack"
+      replies:
+        - "Bạn có thể dùng /aiadmin report <player> để gửi nghi vấn hack cho AI quan sát."
+        - "Muốn báo cáo nhanh, dùng /aiadmin report <player> nhé."
+        - "Cú pháp report: /aiadmin report <player>. AI sẽ theo dõi mục tiêu."
+
+    status_info:
+      mode: contains
+      match:
+        - "server sao rồi"
+        - "tình trạng server"
+      replies:
+        - "Server đang online ổn định. Nếu bạn thấy bất thường, cứ báo cho staff."
+        - "Hiện server vận hành bình thường. Bạn cần hỗ trợ gì thêm không?"
+        - "Trạng thái chung ổn định. Mình có thể giúp bạn kiểm tra thông tin cơ bản."

@@ -1,0 +1,14 @@
+rule:
+  enabled: true
+  safe_reply: "Sorry, I can't answer that. Please ask something else."
+  blocked_topics:
+    - "hack tutorial"
+    - "bypass anti-cheat"
+    - "ddos"
+    - "server exploit"
+    - "self-harm"
+  blocked_phrases:
+    - "premium crack"
+    - "latest dupe bug"
+    - "server destroy command"
+    - "free hack tool"

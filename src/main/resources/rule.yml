@@ -1,0 +1,16 @@
+rule:
+  enabled: true
+  safe_reply: "Xin lỗi, mình không thể trả lời nội dung đó. Bạn hỏi nội dung khác nhé."
+
+  blocked_topics:
+    - "hướng dẫn hack"
+    - "bypass anti-cheat"
+    - "ddos"
+    - "exploit server"
+    - "tự hại"
+
+  blocked_phrases:
+    - "crack premium"
+    - "dupe bug mới nhất"
+    - "lệnh phá server"
+    - "tool hack free"

@@ -1,0 +1,35 @@
+bot:
+  enabled: true
+  bot_name: "Grox"
+  selected: ""
+
+  # CLEAR, WATCH, ALERT, DANGER, SEVERE
+  trigger_tier: "ALERT"
+
+  # Quan sát mặc định trong 10 phút
+  observe_seconds: 600
+  follow_interval_ticks: 20
+
+  # Hook lệnh tùy chọn
+  # Placeholder hỗ trợ: {bot_name}, {display_name}, {bot_tag}, {player}, {reason}, {world}, {x}, {y}, {z}, {yaw}, {pitch}
+  commands:
+    spawn: []
+    follow: []
+    remove: []
+
+  ai:
+    enabled: true
+    use_llm: true
+    llm_prefix: "[BotAI] "
+    report_interval_seconds: 12
+    playful_rate: 0.18
+    voice:
+      normal:
+        - "[BotAI] {bot} đang theo dõi {player} | tier={tier} | suspicion={suspicion}"
+        - "[BotAI] {player} có {alerts} cảnh báo, tiếp tục quan sát. {learning}"
+      playful:
+        - "[BotAI] {player} đang hơi gắt, check kỹ nha."
+        - "[BotAI] Nhìn qua thấy {player} khá căng, để ý thêm xíu."
+      danger:
+        - "[BotAI] Cảnh báo cao: {player} tier={tier}, đề xuất staff vào theo dõi ngay."
+        - "[BotAI] Nguy cơ hack rõ hơn: {player}, cảnh báo={alerts}, suspicion={suspicion}. {learning}"

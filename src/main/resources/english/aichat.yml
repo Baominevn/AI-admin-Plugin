@@ -1,0 +1,38 @@
+aichat:
+  use_custom_first: true
+  default_reply: "I didn't fully understand that. Try asking about server rules, how to play, or basic server info."
+  rules:
+    greeting:
+      mode: contains
+      match: ["hello", "hi", "hey", "greetings"]
+      replies:
+        - "Hey {player}, there are currently {online} players online."
+        - "Hello {player}. The server currently has {online} players online."
+        - "Hi {player}, online count right now is {online}."
+    rules_info:
+      mode: contains
+      match: ["rule", "rules", "policy"]
+      replies:
+        - "Basic rules: no hacks, no bug abuse, and respect other players and staff."
+        - "Please play fair, avoid cheat tools, and do not ruin the experience for others."
+        - "Quick rule summary: play fair, no cheating, and do not be overly toxic."
+    command_help:
+      mode: contains
+      match: ["command", "help", "guide"]
+      replies:
+        - "Players can ask me with: ai <message>. Staff can use extra commands with /ai help."
+        - "If you're a member, just type: ai <question>. Staff can check commands with /ai help."
+        - "You can talk to me directly with 'ai ...' and I'll help as fast as I can."
+    ping_exact:
+      mode: equals
+      match: ["ping"]
+      replies:
+        - "Pong. The server looks stable."
+        - "Pong. Connection looks normal right now."
+        - "Pong. Everything still looks smooth."    report_hint:
+      mode: contains
+      match: ["report", "suspicious", "hack"]
+      replies:
+        - "Regular players do not have a report command right now. Please contact staff if you suspect cheating."
+        - "Staff can use /ai flag <player> <type> or /ai observe <player> on for a closer review."
+        - "For manual review, staff can open /ai dashboard or run /ai check <player>."        - "Overall status looks stable. I can help with basic server information if you need it."

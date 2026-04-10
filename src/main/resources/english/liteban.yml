@@ -1,0 +1,23 @@
+liteban:
+  exempt_ops: true
+  default_duration: "3d"
+  default_reason: "AI detected cheating"
+  commands:
+    ban: "litebans:ban {player} {duration} {reason}"
+    kick: "litebans:kick {player} {reason}"
+  colors:
+    prefix: "&8&l✦ &c&lLiteBans &8&l➜ &r"
+    success: "&a"
+    warning: "&6"
+    error: "&c"
+    info: "&b"
+  ui:
+    frame:
+      enabled: true
+      top: "&8&m▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬"
+      bottom: "&8&m▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬"
+    templates:
+      success: "{prefix}{color}✔ {message}"
+      warning: "{prefix}{color}⚠ {message}"
+      error: "{prefix}{color}✖ {message}"
+      info: "{prefix}{color}ℹ {message}"

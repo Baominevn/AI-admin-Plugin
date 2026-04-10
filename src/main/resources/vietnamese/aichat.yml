@@ -1,0 +1,46 @@
+aichat:
+  use_custom_first: true
+  default_reply: "MÃ¬nh chÆ°a hiá»ƒu rÃµ cÃ¢u há»i. Báº¡n thá»­ há»i vá» luáº­t server, cÃ¡ch chÆ¡i hoáº·c thÃ´ng tin cÆ¡ báº£n nhÃ©."
+  rules:
+    greeting:
+      mode: contains
+      match: ["xin chÃ o", "chÃ o", "hello", "hi"]
+      replies:
+        - "ChÃ o {player}, hiá»‡n cÃ³ {online} ngÆ°á»i Ä‘ang online."
+        - "Xin chÃ o {player}. Server Ä‘ang cÃ³ {online} ngÆ°á»i chÆ¡i."
+        - "Hello {player}. Hiá»‡n táº¡i online: {online}."
+    rules_info:
+      mode: contains
+      match: ["luáº­t", "rule", "ná»™i quy"]
+      replies:
+        - "Luáº­t cÆ¡ báº£n: khÃ´ng hack, khÃ´ng exploit bug, tÃ´n trá»ng ngÆ°á»i khÃ¡c vÃ  staff."
+        - "Báº¡n chÆ¡i fair-play, khÃ´ng dÃ¹ng tool gian láº­n, khÃ´ng phÃ¡ hoáº¡i tráº£i nghiá»‡m ngÆ°á»i khÃ¡c nhÃ©."
+        - "Rule nhanh: chÆ¡i Ä‘áº¹p, khÃ´ng gian láº­n, khÃ´ng toxic quÃ¡ má»©c."
+    command_help:
+      mode: contains
+      match: ["lá»‡nh", "help", "hÆ°á»›ng dáº«n"]
+      replies:
+        - "Player dÃ¹ng cÃº phÃ¡p: ai <ná»™i dung>. Staff cÃ³ thá»ƒ dÃ¹ng thÃªm /ai help."
+        - "Náº¿u báº¡n lÃ  member, cá»© chat: ai <cÃ¢u há»i>. Staff xem lá»‡nh táº¡i /ai help."
+        - "Báº¡n cÃ³ thá»ƒ há»i trá»±c tiáº¿p báº±ng 'ai ...', mÃ¬nh sáº½ há»— trá»£ nhanh."
+    ping_exact:
+      mode: equals
+      match: ["ping"]
+      replies:
+        - "Pong. Server Ä‘ang á»•n Ä‘á»‹nh."
+        - "Pong. Káº¿t ná»‘i hiá»‡n táº¡i bÃ¬nh thÆ°á»ng."
+        - "Pong. Má»i thá»© váº«n mÆ°á»£t."
+    report_hint:
+      mode: contains
+      match: ["báo cáo", "report", "nghi hack"]
+      replies:
+        - "Hiện member không có lệnh report riêng. Nếu nghi hack, hãy báo staff kiểm tra."
+        - "Staff có thể dùng /ai flag <player> <type> hoặc /ai observe <player> on để theo dõi kỹ hơn."
+        - "Muốn xem kỹ hơn, staff có thể mở /ai dashboard hoặc dùng /ai check <player>."
+    status_info:
+      mode: contains
+      match: ["server sao rá»“i", "tÃ¬nh tráº¡ng server"]
+      replies:
+        - "Server Ä‘ang online á»•n Ä‘á»‹nh. Náº¿u báº¡n tháº¥y báº¥t thÆ°á»ng, cá»© bÃ¡o cho staff."
+        - "Hiá»‡n server váº­n hÃ nh bÃ¬nh thÆ°á»ng. Báº¡n cáº§n há»— trá»£ gÃ¬ thÃªm khÃ´ng?"
+        - "Tráº¡ng thÃ¡i chung á»•n Ä‘á»‹nh. MÃ¬nh cÃ³ thá»ƒ giÃºp báº¡n kiá»ƒm tra thÃ´ng tin cÆ¡ báº£n."
